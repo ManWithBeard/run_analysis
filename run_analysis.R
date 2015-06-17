@@ -92,6 +92,8 @@ run_analysis <- function()
    write.csv(summary, "summary.csv")
    write.table(summary, "summary.txt", row.names = FALSE)
    
-   # return the mean of all columns
-   colMeans(rbind(train_data, test_data)[1:561])
+   # return the mean and standard deviation of all columns
+   list(colMeans(combined_set[1:561]), colStdevs(combined_set[1:561]))
+   
+   
 }
